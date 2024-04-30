@@ -180,7 +180,9 @@ def get_current_stock_predict(message):
         bot.reply_to(message, "Занимаемся расчётом для акции " + tick + ". Это займёт около минуты.")
         ans = 'По нашему мнению, ' + tick + ' - акция ' + (
             'низкой' if id == 1 else ('средней' if id == 2 else 'высокой')) + ' волатильности\n\n'
-        ans += predict(str(id) + "-1", tickers) + predict(str(id) + "-7", tickers) + not_iir
+        ans += 'Прогноз на день вперёд:\n' + predict(str(id) + "-1", tickers)
+        ans += 'Прогноз на неделю вперёд:\n' + predict(str(id) + "-7", tickers)
+        ans += not_iir
         bot.reply_to(message, ans, reply_markup=main_markup)
 
 
