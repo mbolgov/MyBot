@@ -62,10 +62,7 @@ X_train_up, X_test_up, y_train_up, y_test_up = train_test_split(X, y_up, test_si
 eval_set = [(X1, y_up1), (X_train_up, y_train_up), (X_test_up, y_test_up)]
 
 # Создание модели градиентного бустинга
-# model = XGBRegressor(n_estimators=500, learning_rate=0.055, max_depth=11, early_stopping_rounds=5)
-model = XGBRegressor(n_estimators=400, learning_rate=0.055, max_depth=3, early_stopping_rounds=5) # model for pr=3
-# model = RandomForestRegressor(n_estimators=100, max_depth=10)
-
+model = XGBRegressor(n_estimators=400, learning_rate=0.055, max_depth=3, early_stopping_rounds=5)
 
 print("go")
 

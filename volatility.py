@@ -40,8 +40,6 @@ with requests.Session() as session:
         s = 0
         for i in range(len(data)):
             volat.append([((data[i]['high'] - data[i]['low']) / data[i]['low']) ** 3, tick])
-            # s += ((data[i]['high'] - data[i]['low']) / data[i]['low']) ** 3
-        # volat.append([s / len(data), tick])
 a = [[], [], []]
 volat.sort()
 for i in range(len(tickers)):
